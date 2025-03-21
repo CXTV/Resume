@@ -11,6 +11,7 @@ namespace ResumeManagement.Domain.Entities
     {
         public string Title { get; set; }
         public JobLevel Level { get; set; }
+        //relations 多对一
         public Guid CompanyID { get; set; }
         public Company Company { get; set; }
         //relations 一对多一个职位可以有多个候选人

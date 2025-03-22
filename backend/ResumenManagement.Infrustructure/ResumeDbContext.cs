@@ -17,7 +17,7 @@ namespace ResumenManagement.Persistance
         {
             base.OnModelCreating(modelBuilder);
 
-
+             
             modelBuilder.Entity<Job>()
                 .HasOne(job => job.Company)
                 .WithMany(company => company.Jobs)
@@ -28,6 +28,15 @@ namespace ResumenManagement.Persistance
                 .WithMany(job => job.Candidates)
                 .HasForeignKey(candidate => candidate.JobID);
 
+
+            modelBuilder.Entity<Job>().
+                Property(job => job.Level)
+                .HasConversion<string>();
+
+
+            modelBuilder.Entity<Company>()
+                .Property(company => company.Size)
+                .HasConversion<string>();
         }
 
     }   

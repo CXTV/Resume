@@ -10,7 +10,5 @@ namespace ResumeManagement.Domain.Entities
 
         //relations 一对多
         public ICollection<Job> Jobs { get; set; }
-
-
     }
 }

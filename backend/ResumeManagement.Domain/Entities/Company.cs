@@ -3,7 +3,7 @@
 
 namespace ResumeManagement.Domain.Entities
 {
-    public class Company:BaseEntity
+    public class Company:BaseEntity<Guid>
     {
         public string Name { get; set; }
         public CompanySize Size { get; set; }

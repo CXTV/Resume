@@ -21,6 +21,13 @@ namespace ResumenManagement.Persistance.Repositories
 
         }
 
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbContext.Set<T>().AnyAsync(predicate);
+
+        }
+
         public async Task DeleteAsync(T entity)
         {
             _dbContext.Set<T>().Remove(entity);

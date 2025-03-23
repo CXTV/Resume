@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ResumeManagement.Domain.Entities
 {
-    public class Candidate: BaseEntity
+    public class Candidate: BaseEntity<Guid>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

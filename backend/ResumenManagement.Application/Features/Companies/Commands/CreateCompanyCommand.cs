@@ -1,9 +1,5 @@
 ﻿using MediatR;
-using ResumeManagement.Domain.Entities;
 using ResumeManagement.Domain.Enums;
-using ResumenManagement.Application.Responses;
-using System.Drawing;
-
 
 namespace ResumenManagement.Application.Features.Companies.Commands
 {

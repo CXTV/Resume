@@ -25,9 +25,9 @@ namespace ResumenManagement.Application.Features.Companies.Commands
 
             var validator = new CreateCompanyCommandValidator();
             var validationResult = await validator.ValidateAsync(request);
-            var existingCompany = await _companyRepository.GetAsync(c=>c.Name==request.Name);
+            var existingCompany = await _companyRepository.AnyAsync(c => c.Name == request.Name);
 
-            if (existingCompany != null)
+            if (existingCompany)
             {
                 _logger.LogInformation("Company Already Exists");
                 createCompanyCommandResponse.Success = false;

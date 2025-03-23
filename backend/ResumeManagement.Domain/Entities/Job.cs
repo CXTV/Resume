@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResumeManagement.Domain.Entities
 {
-    public class Job: BaseEntity
+    public class Job: BaseEntity<Guid>
     {
         public string Title { get; set; }
         public JobLevel Level { get; set; }

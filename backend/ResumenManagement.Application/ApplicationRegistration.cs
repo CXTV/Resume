@@ -14,8 +14,6 @@ namespace ResumenManagement.Application
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(applicationAssembly));
             //3.注册所有AutoMapper配置
             services.AddAutoMapper(applicationAssembly);
-
-
         }
 
     }

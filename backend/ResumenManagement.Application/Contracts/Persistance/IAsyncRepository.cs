@@ -11,6 +11,8 @@ namespace ResumenManagement.Application.Contracts.Persistance
         Task<IReadOnlyList<T>> ListAllAsync();
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate);
 
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+
         Task<T> AddAsync(T entity);
 
         Task UpdateAsync(T entity);

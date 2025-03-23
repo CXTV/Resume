@@ -1,6 +1,6 @@
 ﻿using ResumeManagement.Domain.Enums;
 
-namespace ResumenManagement.Application.Features.Companies.Commands
+namespace ResumenManagement.Application.Features.Companies.Commands.CreateCompany
 {
     public class CreateCompanyDto
     {

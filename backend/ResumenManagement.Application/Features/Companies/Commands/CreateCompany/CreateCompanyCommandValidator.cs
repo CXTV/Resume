@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 
 
-namespace ResumenManagement.Application.Features.Companies.Commands
+namespace ResumenManagement.Application.Features.Companies.Commands.CreateCompany
 {
-    public class CreateCompanyCommandValidator: AbstractValidator<CreateCompanyCommand>
+    public class CreateCompanyCommandValidator : AbstractValidator<CreateCompanyCommand>
     {
         public CreateCompanyCommandValidator()
         {

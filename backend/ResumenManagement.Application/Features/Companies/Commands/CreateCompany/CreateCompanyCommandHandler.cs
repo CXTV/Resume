@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using ResumeManagement.Domain.Entities;
 using ResumenManagement.Application.Contracts.Persistance;
 
-namespace ResumenManagement.Application.Features.Companies.Commands
+namespace ResumenManagement.Application.Features.Companies.Commands.CreateCompany
 {
     public class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyCommand, CreateCompanyCommandResponse>
     {
@@ -46,7 +46,7 @@ namespace ResumenManagement.Application.Features.Companies.Commands
                 foreach (var error in validationResult.Errors)
                 {
                     createCompanyCommandResponse.ValidationErrors.Add(error.ErrorMessage);
-                }            
+                }
             }
 
             if (createCompanyCommandResponse.Success)

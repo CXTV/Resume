@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ResumenManagement.Application.Features.Companies.Commands;
+using ResumenManagement.Application.Features.Companies.Commands.CreateCompany;
+using ResumenManagement.Application.Features.Companies.Queries.GetAllCompany;
 
 namespace backend.Controllers
 {
@@ -24,5 +25,27 @@ namespace backend.Controllers
 
             //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
         }
+
+
+        [HttpGet(Name = "GetAllCompany")]
+        public async Task<ActionResult<List<GetAllCompanyVm>>> GetAllCompany([FromQuery] GetAllCompanyQuery getAllCompanyQuery)
+        {
+            var response = await _mediator.Send(getAllCompanyQuery);
+
+            return Ok(response);
+
+            //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
+        }
+
+
+
+        //[HttpGet(Name = "GetCompanyById")]
+        //public async Task<ActionResult<GetCompanyByIdResponse>> GetCompanyById([FromQuery] GetCompanyByIdQuery getCompanyByIdQuery)
+        //{
+        //    var response = await _mediator.Send(getCompanyByIdQuery);
+
+        //    return Ok(response);
+        //}
+
     }
 }

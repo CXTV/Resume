@@ -19,6 +19,7 @@ namespace ResumenManagement.Persistance
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
+            services.AddScoped<ICandidateRepository, CandidateRepository>();
         }
     }
 }

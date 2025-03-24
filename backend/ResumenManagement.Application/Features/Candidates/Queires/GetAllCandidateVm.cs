@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResumenManagement.Application.Features.Candidates.Queires
 {
-    public class GetAllCandidate
+    public class GetAllCandidateVm
     {
         public Guid ID { get; set; }
         public string FirstName { get; set; }

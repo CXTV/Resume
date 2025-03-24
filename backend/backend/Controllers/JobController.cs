@@ -26,8 +26,6 @@ namespace backend.Controllers
             _jobRepository = jobRepository;
         }
 
-
-
         [HttpPost(Name = "CreateJob")]
         public async Task<ActionResult> CreateJob([FromBody] CreateJobDto dto)
         {
@@ -39,8 +37,6 @@ namespace backend.Controllers
             //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
         }
 
-
-
         [HttpGet(Name = "GetAllJob")]
         public async Task<ActionResult<List<GetAllJobVm>>> GetAllJob()
         {
@@ -49,29 +45,5 @@ namespace backend.Controllers
             return Ok(allJobs);
             //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
         }
-
-
-
-
-
-        //[HttpPost(Name = "CreateJob")]
-        //public async Task<ActionResult<CreateJobResponse>> CreateCompany([FromBody] CreateJobCommand createJobCommand)
-        //{
-        //    var response = await _mediator.Send(CreateJobCommand);
-
-        //    return Ok(response);
-        //    //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
-        //}
-
-
-        //[HttpGet(Name = "GetAllJob")]
-        //public async Task<ActionResult<List<GetAllJobResponse>>> GetAllCompany([FromQuery] GetAllJobQuery getAllJobQuery)
-        //{
-        //    var response = await _mediator.Send(GetAllJobQuery);
-
-        //    return Ok(response);
-
-        //}
-
     }
 }

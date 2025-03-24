@@ -36,8 +36,7 @@ namespace backend.Controllers
 
             if (pdfFile.Length > fiveMegaByte || pdfFile.ContentType != pdfMimeType)
             {
-                return BadRequest("File is not valid");
-                
+                return BadRequest("File is not valid");                
             }
 
             var pdfFileName = Guid.NewGuid().ToString() + ".pdf";
@@ -56,7 +55,6 @@ namespace backend.Controllers
         }
 
 
-
         [HttpGet(Name = "GetAllCandidate")]
         public async Task<ActionResult<List<GetAllCandidateVm>>> GetAllCandidate()
         {
@@ -65,6 +63,28 @@ namespace backend.Controllers
             return Ok(allCandidates);
         }
 
+
+        [HttpGet("{id}/resume", Name = "DownloadCandidateResume")]
+        public IActionResult DownloadCandidateResume(Guid id)
+        {
+
+            var candidate = _candidateRepository.GetByIdAsync(id).Result;
+            if (candidate == null || string.IsNullOrEmpty(candidate.ResumeUrl))
+            {
+                return NotFound("Resume not found");
+            }
+
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", candidate.ResumeUrl);
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("File not found");
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, "application/pdf", candidate.ResumeUrl);
+
+        }
 
     }
 }

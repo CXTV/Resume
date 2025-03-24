@@ -12,6 +12,6 @@ namespace ResumenManagement.Application.Features.Companies.Queries.GetAllCompany
         public Guid ID { get; set; }
         public string Name { get; set; }
         public CompanySize Size { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

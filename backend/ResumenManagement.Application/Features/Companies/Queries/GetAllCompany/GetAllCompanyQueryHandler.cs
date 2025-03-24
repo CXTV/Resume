@@ -25,10 +25,7 @@ namespace ResumenManagement.Application.Features.Companies.Queries.GetAllCompany
         public async Task<GetAllCompanyResponse> Handle(GetAllCompanyQuery request, CancellationToken cancellationToken)
         {
             var response = new GetAllCompanyResponse();
-
-
             var allCompany = (await _companyRepository.ListAllAsync()).ToList();
-
             response.Company = _mapper.Map<List<GetAllCompanyVm>>(allCompany);
 
             return response;

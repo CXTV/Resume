@@ -22,7 +22,6 @@ namespace backend.Controllers
             var response = await _mediator.Send(createCompanyCommand);
 
             return Ok(response);
-
             //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
         }
 
@@ -34,18 +33,7 @@ namespace backend.Controllers
 
             return Ok(response);
 
-            //return CreatedAtRoute("GetCompanyById", new { id = response.Company.CompanyID }, response);
         }
-
-
-
-        //[HttpGet(Name = "GetCompanyById")]
-        //public async Task<ActionResult<GetCompanyByIdResponse>> GetCompanyById([FromQuery] GetCompanyByIdQuery getCompanyByIdQuery)
-        //{
-        //    var response = await _mediator.Send(getCompanyByIdQuery);
-
-        //    return Ok(response);
-        //}
 
     }
 }

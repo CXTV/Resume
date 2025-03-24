@@ -15,8 +15,10 @@ namespace ResumenManagement.Persistance
                 .EnableSensitiveDataLogging() // 启用敏感数据记录
                 );
 
+            //数据服务注册
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
         }
     }
 }
